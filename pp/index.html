@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsivo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "menu main"
+                "footer footer";
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+        header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            grid-area: menu;
+            background-color: #f4f4f4;
+            padding: 15px;
+        }
+        main {
+            grid-area: main;
+            padding: 15px;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none; /* Esconde o menu em telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cabeçalho</h1>
+        </header>
+        <nav>
+            <h2>Menu de Navegação</h2>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Conteúdo Principal</h2>
+            <p>Este é o espaço para o conteúdo principal da página.</p>
+        </main>
+        <footer>
+            <p>Rodapé</p>
+        </footer>
+    </div>
+</body>
+</html>
