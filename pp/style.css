@@ -1,55 +1,50 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "menu main"
+                "footer footer";
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+        header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            grid-area: menu;
+            background-color: #f4f4f4;
+            padding: 15px;
+        }
+        main {
+            grid-area: main;
+            padding: 15px;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-.container {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "menu main"
-        "footer footer";
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh;
-}
-
-header {
-    grid-area: header;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-nav {
-    grid-area: menu;
-    background-color: #f4f4f4;
-    padding: 15px;
-}
-
-main {
-    grid-area: main;
-    padding: 15px;
-}
-
-footer {
-    grid-area: footer;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        grid-template-areas:
-            "header"
-            "main"
-            "footer";
-        grid-template-columns: 1fr;
-    }
-    nav {
-        display: none; /* Esconde o menu em telas pequenas */
-    }
-}
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
